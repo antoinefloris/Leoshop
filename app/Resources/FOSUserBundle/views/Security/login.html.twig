@@ -1,0 +1,54 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+    <div class="login">
+        <div class="wrap">
+            <div class="col_1_of_login span_1_of_login">
+                <h4 class="title">New Customers</h4>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan</p>
+                <div class="button1">
+                    <a href="{{ path('fos_user_registration_register') }}"><input type="submit" name="Submit" value="Create an Account"></a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="col_1_of_login span_1_of_login">
+                <div class="login-title">
+                    <h4 class="title">Registered Customers</h4>
+                    <div id="loginbox" class="loginbox">
+                            <form action="{{ path("fos_user_security_check") }}" method="post" id="login-form">
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            <fieldset class="input">
+                                <p id="login-form-username">
+                                    <label for="modlgn_username">{{ 'security.login.username'|trans }}</label>
+                                    <input id="modlgn_username" type="text" id="username" name="_username" value="{{ last_username }}" autocomplete="off" required="required" size="18" class="inputbox" />
+                                </p>
+                                <p id="login-form-password">
+                                    <label for="modlgn_passwd">{{ 'security.login.password'|trans }}</label>
+                                    <input id="modlgn_passwd" id="password" name="_password" required="required" class="inputbox" size="18" autocomplete="off" />
+                                </p>
+                                <div class="remember">
+                                    <p id="login-form-remember">
+                                        <label for="modlgn_remember"><a href="{{ path('fos_user_resetting_request') }}">Forget Your Password ? </a></label>
+                                    </p>
+                                    <input type="submit" name="Submit" class="button" value="{{ 'security.login.submit'|trans }}">
+                                    <div class="clear"></div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+{% endblock fos_user_content %}
+
+

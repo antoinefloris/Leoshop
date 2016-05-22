@@ -1,0 +1,35 @@
+accueil:
+    path:     /
+    defaults: { _controller: EshopBundle:Accueil:accueil }
+
+panier:
+    path:     /panier
+    defaults: { _controller: EshopBundle:Panier:panier }
+
+homme:
+    path:     /homme
+    defaults: { _controller: EshopBundle:Categorie:homme }
+
+femme:
+    path:     /femme
+    defaults: { _controller: EshopBundle:Categorie:femme }
+
+enfant:
+    path:     /enfant
+    defaults: { _controller: EshopBundle:Categorie:enfant }
+
+produit:
+    path:     /produit
+    defaults: { _controller: EshopBundle:Produit:produit }
+
+delivery:
+    path:     /delivery
+    defaults: { _controller: EshopBundle:Mention:delivery }
+
+about:
+    path:     /à_propos
+    defaults: { _controller: EshopBundle:Mention:about }
+
+contact:
+    path:     /contact
+    defaults: { _controller: EshopBundle:Mention:contact }
